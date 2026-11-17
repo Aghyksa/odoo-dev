@@ -1,0 +1,20 @@
+{
+  "name": "aghyksa-odoo",
+  "description": "Odoo development skills for coding agents by aghyksa",
+  "owner": {
+    "name": "aghyksa",
+    "url": "https://aghyksa.com"
+  },
+  "plugins": [
+    {
+      "name": "odoo-dev",
+      "source": "./",
+      "description": "Odoo 15-20 development skill: every API claim backed by file:line from your own Odoo version. Native first, TDD, security, version differences, porting, plus a zero-dependency tracer.",
+      "version": "2.2.0",
+      "author": {
+        "name": "aghyksa",
+        "url": "https://aghyksa.com"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=general-sans@400,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+/* palette from aghyksa.com */
+:root {
+  --void: #000000;
+  --paper: #e0dedd;
+  --cream: #eee8e2;
+  --ink: #211e1c;
+  --accent: #891a20;
+  --accent-hi: #c2262c;
+  --muted: #68635f;
+  --muted-hi: #b9aea4;
+  --edge: #ffffff24;
+  --display: "Clash Display", system-ui, sans-serif;
+  --sans: "General Sans", system-ui, sans-serif;
+  --mono: "Space Mono", ui-monospace, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { background: var(--void); overflow: hidden; }
+
+.canvas { position: relative; overflow: hidden; background: var(--void); color: var(--cream); font-family: var(--sans); }
+
+.grain {
+  position: absolute; inset: 0; pointer-events: none; opacity: .22; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.tile { position: absolute; background: var(--accent-hi); }
+.tile.deep { background: var(--accent); }

@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  selftest:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Tracer selftest
+        run: python skills/odoo-dev/scripts/odoo_env.py selftest
+      - name: Python 3.8 syntax
+        run: python -c "import ast; ast.parse(open('skills/odoo-dev/scripts/odoo_env.py', encoding='utf-8').read(), feature_version=(3, 8))"
+
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Manifests parse and share one version
+        run: |
+          python - <<'EOF'
+          import json, re
+          files = [".claude-plugin/plugin.json", ".codex-plugin/plugin.json", "gemini-extension.json"]
+          versions = {f: json.load(open(f))["version"] for f in files}
+          for f in (".claude-plugin/marketplace.json", ".agents/plugins/marketplace.json"):
+              json.load(open(f))
+          versions[".claude-plugin/marketplace.json"] = json.load(open(".claude-plugin/marketplace.json"))["plugins"][0]["version"]
+          versions["SKILL.md"] = re.search(r"^\s+version: (\S+)", open("skills/odoo-dev/SKILL.md").read(), re.M).group(1)
+          print(versions)
+          assert len(set(versions.values())) == 1, versions
+          EOF

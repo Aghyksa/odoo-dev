@@ -1,0 +1,27 @@
+{
+  "name": "odoo-dev",
+  "version": "2.2.0",
+  "description": "Odoo 15-20 development skill: every API claim backed by file:line from your own Odoo version. Native first, TDD, security, version differences, porting, plus a zero-dependency tracer for models, fields, override chains, routes and port scans.",
+  "author": {
+    "name": "aghyksa",
+    "url": "https://aghyksa.com"
+  },
+  "homepage": "https://github.com/Aghyksa/odoo-dev",
+  "repository": "https://github.com/Aghyksa/odoo-dev",
+  "license": "MIT",
+  "keywords": ["odoo", "odoo-development", "erp", "python", "porting", "migration", "tdd", "security", "agent-skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Odoo Dev",
+    "shortDescription": "Proof-based Odoo 15-20 development: no guessed APIs",
+    "longDescription": "Makes the agent trace your real Odoo version before coding: model, field, method override chain, xmlid and route lookups with file:line, native-first decisions, TDD, security checks for sudo and public routes, and a port scanner for moving modules between Odoo 15 and 20.",
+    "developerName": "aghyksa",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Where is sale.order.action_confirm overridden in this project?",
+      "Port this module from Odoo 17 to 19."
+    ],
+    "websiteURL": "https://github.com/Aghyksa/odoo-dev"
+  }
+}

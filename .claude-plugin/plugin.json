@@ -1,0 +1,13 @@
+{
+  "name": "odoo-dev",
+  "version": "2.2.0",
+  "description": "Odoo 15-20 development skill: every API claim backed by file:line from your own Odoo version. Native first, TDD, security, version differences, porting, plus a zero-dependency tracer for models, fields, override chains, routes and port scans.",
+  "author": {
+    "name": "aghyksa",
+    "url": "https://aghyksa.com"
+  },
+  "homepage": "https://github.com/Aghyksa/odoo-dev",
+  "repository": "https://github.com/Aghyksa/odoo-dev",
+  "license": "MIT",
+  "keywords": ["odoo", "odoo-development", "erp", "python", "porting", "migration", "tdd", "security", "agent-skills"]
+}

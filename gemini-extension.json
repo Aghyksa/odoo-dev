@@ -1,0 +1,5 @@
+{
+  "name": "odoo-dev",
+  "version": "2.2.0",
+  "description": "Odoo 15-20 development skill: every API claim backed by file:line from your own Odoo version."
+}

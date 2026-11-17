@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="brand.css">
+<style>
+  html, body, .canvas { width: 1280px; height: 420px; }
+  .nav { position: absolute; top: 30px; left: 56px; right: 56px; display: flex; gap: 44px;
+         font: 400 12px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--muted-hi); }
+  .nav span::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 10px;
+                      background: var(--accent-hi); vertical-align: 1px; }
+  .nav .end { margin-left: auto; }
+  .nav .end::before { display: none; }
+  h1 { position: absolute; left: 52px; top: 86px; font: 600 112px/1 var(--display); letter-spacing: -.025em; }
+  .tag { position: absolute; left: 56px; top: 226px; width: 630px; font: 500 24px/1.36 var(--sans); color: var(--paper); }
+  .tag b { font-weight: 500; color: var(--accent-hi); }
+  .ver { position: absolute; left: 56px; bottom: 46px; display: flex; font: 700 14px/1 var(--mono); }
+  .ver span { padding: 10px 14px; border: 1px solid var(--edge); margin-right: -1px; color: var(--cream); }
+  .ver .lbl { color: var(--muted-hi); font-weight: 400; letter-spacing: .14em; }
+  .ver .on { background: var(--accent); border-color: var(--accent); }
+  .term { position: absolute; right: 56px; top: 92px; width: 520px; padding: 22px 24px 20px;
+          background: var(--ink); border: 1px solid var(--edge); font: 400 14px/1.85 var(--mono); color: var(--paper); }
+  .term .cmd { color: var(--cream); margin-bottom: 8px; }
+  .term .cmd i { font-style: normal; color: var(--accent-hi); margin-right: 8px; }
+  .row { display: flex; justify-content: space-between; }
+  .row em { font-style: normal; color: var(--muted-hi); }
+  .row .sup { color: var(--cream); }
+  .dim { color: var(--muted); }
+  .verdict { margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--edge); color: var(--cream); }
+  .verdict b { color: var(--accent-hi); margin-right: 10px; }
+  .agents { position: absolute; right: 56px; bottom: 46px; font: 400 12px/1 var(--mono);
+            letter-spacing: .12em; text-transform: uppercase; color: var(--muted-hi); }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="tile deep" style="right: 330px; top: 60px; width: 92px; height: 92px;"></div>
+  <div class="tile" style="right: 22px; top: 236px; width: 70px; height: 70px;"></div>
+  <div class="tile deep" style="right: 520px; top: 318px; width: 34px; height: 34px;"></div>
+
+  <div class="nav"><span>Agent Skill</span><span>Odoo 15—20</span><span>Proof over guesses</span><span class="end">aghyksa</span></div>
+  <h1>odoo-dev</h1>
+  <p class="tag">Stop your AI agent from guessing Odoo APIs. Every claim ships with <b>file:line</b> from your own Odoo version.</p>
+  <div class="ver"><span class="lbl">ODOO</span><span class="on">15</span><span class="on">16</span><span class="on">17</span><span class="on">18</span><span class="on">19</span><span class="on">20</span></div>
+
+  <div class="term">
+    <div class="cmd"><i>$</i>odoo_env.py method sale.order action_confirm</div>
+    <div class="row"><span>sale/models/sale_order.py:1145</span><em>base</em></div>
+    <div class="row"><span>sale_crm/models/sale_order.py:14</span><em class="sup">super</em></div>
+    <div class="row"><span>sale_loyalty/models/sale_order.py:121</span><em class="sup">super</em></div>
+    <div class="row"><span>event_sale/models/sale_order.py:25</span><em class="sup">super</em></div>
+    <div class="row dim"><span>… 5 more overrides</span></div>
+    <div class="verdict"><b>VERDICT</b>9 definitions, deepest runs first</div>
+  </div>
+  <div class="agents">Claude Code · Codex · Gemini · Cursor · Copilot</div>
+  <div class="grain"></div>
+</div>
+</body>
+</html>
