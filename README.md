@@ -23,7 +23,7 @@
 | Agent | Command |
 |---|---|
 | **Claude Code** | `/plugin marketplace add Aghyksa/odoo-dev` then `/plugin install odoo-dev@aghyksa-odoo` |
-| **Codex** | `codex plugin marketplace add Aghyksa/odoo-dev`, then install **Odoo Dev** from `/plugins` |
+| **Codex** | `codex plugin marketplace add Aghyksa/odoo-dev` then `codex plugin add odoo-dev@aghyksa-odoo` |
 | **Gemini CLI** | `gemini extensions install https://github.com/Aghyksa/odoo-dev` |
 | **Cursor, Copilot, Windsurf, OpenCode, Cline, Amp, …** | `npx skills add Aghyksa/odoo-dev` |
 | **Any agent, via GitHub CLI** (gh 2.90+) | `gh skill install Aghyksa/odoo-dev odoo-dev --agent <agent> --scope user` |
@@ -179,8 +179,12 @@ Update later with `claude plugin marketplace update aghyksa-odoo`, then `claude 
 codex plugin marketplace add Aghyksa/odoo-dev
 ```
 
-Then open `/plugins` in Codex (or **Plugins** in the Codex app), choose the **aghyksa Odoo** marketplace and install
-**Odoo Dev**. Skill only, without the plugin:
+```bash
+codex plugin add odoo-dev@aghyksa-odoo
+```
+
+In the Codex app: **Plugins** → **aghyksa Odoo** → **Odoo Dev**. Update with
+`codex plugin marketplace upgrade aghyksa-odoo`. Skill only, without the plugin:
 
 ```text
 $skill-installer install https://github.com/Aghyksa/odoo-dev/tree/main/skills/odoo-dev
